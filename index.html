@@ -98,7 +98,7 @@
 
 <div id="myModal" class="modal">
   <div class="modal-content">
-    <p>Tu dirección IP está conectada a nuestro servidor.El Token Expira en 30 DIAS.<br>Hora de acceso: <span id="accessTime"></span></p>
+    <p>Tu dirección IP está conectada a nuestro servidor.El Token Expira en 5 DIAS.<br>Hora de acceso: <span id="accessTime"></span></p>
     <button onclick="window.location.href = 'https://autode.sk/49dGjLA';">Acceso Completo</button>
     <button onclick="openFullscreen()">Acceso Limitado</button>
   </div>
@@ -125,7 +125,7 @@
         var token = document.getElementById("token").value;
 
         // Simulación de validación de usuario, contraseña y token
-        if (username === "ayuntamiento" && password === "recaudacion" && token === "81") {
+        if (username === "ayuntamiento" && password === "recaudacion" && token === "5") {
             var currentTime = new Date().toLocaleTimeString();
             document.getElementById("accessTime").innerText = currentTime;
             document.getElementById("myModal").style.display = "flex";
