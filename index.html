@@ -62,6 +62,26 @@
         background-color: #333;
         padding: 20px;
         border-radius: 10px;
+        width: 80%;
+        max-width: 500px;
+    }
+    .options-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .option-btn {
+        padding: 12px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .option-btn:hover {
+        background-color: #218838;
     }
     @media screen and (max-width: 600px) {
         input[type="text"], input[type="password"], input[type="number"] {
@@ -71,6 +91,9 @@
         input[type="submit"], button {
             width: 90%;
             max-width: 90%;
+        }
+        .modal-content {
+            width: 90%;
         }
     }
     .hidden {
@@ -98,9 +121,13 @@
 
 <div id="myModal" class="modal">
   <div class="modal-content">
-    <p>Tu dirección IP está conectada a nuestro servidor.El Token Expira en 5 DIAS.<br>Hora de acceso: <span id="accessTime"></span></p>
-    <button onclick="window.location.href = 'https://autode.sk/4loXtNV';">Acceso Completo</button>
-    <button onclick="openFullscreen()">Acceso Limitado</button>
+    <p>Tu dirección IP está conectada a nuestro servidor. El Token Expira en 5 DIAS.<br>Hora de acceso: <span id="accessTime"></span></p>
+    <div class="options-container">
+        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/4jo0X1j';">Verma</button>
+        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/4lp40bp';">Pedregal Playitas</button>
+        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3FThxaF';">Fraccionamiento Chapultepec</button>
+    </div>
+    <button onclick="openFullscreen()" style="margin-top: 20px; width: 100%;">Acceso Limitado</button>
   </div>
 </div>
 
@@ -145,9 +172,11 @@
         document.getElementById("loginForm").reset();
     }
 
-   
-    
+    function openFullscreen() {
+        // Función para acceso limitado (puedes implementarla si es necesario)
+        alert("Acceso limitado activado");
+    }
 </script>
 
 </body>
-</html> 
+</html>
