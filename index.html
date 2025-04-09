@@ -97,22 +97,15 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s;
     }
     .premium-btn:hover {
         background-color: #c9302c;
     }
-    .premium-content {
-        margin-top: 30px;
-    }
-    .premium-content h2 {
-        color: #ffc107;
-    }
-    .premium-content p {
-        color: #f8f9fa;
-    }
     .premium-btn-large {
         background-color: #ff5733;
-        padding: 20px;
+        padding: 15px;
         color: white;
         border: none;
         border-radius: 5px;
@@ -123,9 +116,32 @@
     .premium-btn-large:hover {
         background-color: #c7441d;
     }
+    .premium-content {
+        margin-top: 30px;
+    }
+    .premium-content h2 {
+        color: #ffc107;
+    }
+    .premium-content p {
+        color: #f8f9fa;
+    }
     .modal-info {
         color: #f8f9fa;
         margin-top: 20px;
+    }
+    .premium-btn-small {
+        background-color: #ff9800;
+        padding: 12px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+    }
+    .premium-btn-small:hover {
+        background-color: #f57c00;
     }
     @media screen and (max-width: 600px) {
         input[type="text"], input[type="password"], input[type="number"] {
@@ -174,7 +190,7 @@
         <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3FWJSgj';">Zona Centro SP</button>
     </div>
     </div>
-    <button onclick="openPremium()" style="margin-top: 20px; width: 100%;">Acceso a versión Premium</button>
+    <button onclick="openPremium()" style="width: 100%; padding: 12px 20px; background-color: #ffc107; color: white; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">Acceso a versión Premium</button>
   </div>
 </div>
 
@@ -190,14 +206,14 @@
             <li>🔹 Acceso exclusivo a mapas de zonas estratégicas</li>
             <li>🔹 Visualización de planos en 3D y herramientas de análisis</li>
             <li>🔹 Consultas directas con nuestros expertos en cartografía</li>
-            <li>🔹Guarda tus propias anotaciones para futuras consultas</li>
-            <li>🔹 Mayor velocidad de carga de planos por estar en un servidor privado</li>
+            <li>🔹 Mayor velocidad de Carga gracias a nuestros servidores privados</li>
+            
         </ul>
         <button class="premium-btn-large" onclick="window.location.href = 'https://www.example.com/premium';">Adquirir Acceso Ahora</button>
     </div>
 
     <div class="modal-info">
-        <p><strong>Precio: calculado.</strong> <br> Obtén acceso total a todos nuestros recursos premium. ¡Haz crecer tus proyectos con los mejores planos!se un mejor notificador..!</p>
+        <p><strong>Precio: Calculado.</strong> <br> Obtén acceso total a todos nuestros recursos premium. ¡Haz crecer tus proyectos con los mejores planos!</p>
     </div>
 </div>
 
