@@ -83,6 +83,24 @@
     .option-btn:hover {
         background-color: #218838;
     }
+    .premium-container {
+        background-color: #555;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 30px;
+        display: none;
+    }
+    .premium-btn {
+        background-color: #d9534f;
+        padding: 15px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .premium-btn:hover {
+        background-color: #c9302c;
+    }
     @media screen and (max-width: 600px) {
         input[type="text"], input[type="password"], input[type="number"] {
             width: 90%;
@@ -95,9 +113,6 @@
         .modal-content {
             width: 90%;
         }
-    }
-    .hidden {
-        display: none;
     }
 </style>
 </head>
@@ -126,17 +141,29 @@
         <button class="option-btn" onclick="window.location.href = 'https://autode.sk/4i9Pgu3';">TERRITORIO SUR</button>
         <button class="option-btn" onclick="window.location.href = 'https://autode.sk/44fBYsA';">AZTECA</button>
         <button class="option-btn" onclick="window.location.href = 'https://autode.sk/4jJLkBB';">IGNACIO ALTAMIRANO</button>
-         <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3XRXgIP';">ZONA FEDERAL</button>
+        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3XRXgIP';">ZONA FEDERAL</button>
         <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3YfjnJB';">ALTA TIERRA</button>
         <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3E94x0j';">LAS PALMAS 3RA SECC</button>
-         <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3EexOqg';">LAS PALMAS 2DA SECC</button>
+        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3EexOqg';">LAS PALMAS 2DA SECC</button>
+        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3FWJSgj';">Zona Centro SP</button>
     </div>
     </div>
-    <button onclick="openFullscreen()" style="margin-top: 20px; width: 100%;">Acceso Limitado</button>
+    <button onclick="openPremium()" style="margin-top: 20px; width: 100%;">Acceso a versión Premium</button>
   </div>
 </div>
 
+<div class="premium-container" id="premiumSection">
+    <h2>Acceso Premium</h2>
+    <p>¡Obtén acceso exclusivo a planos detallados de Ensenada!</p>
+    <button class="premium-btn" onclick="window.location.href = 'https://www.example.com/premium';">Ver Planos</button>
+    <p>Precio: $6000</p>
+    <div id="visitorCount"></div>
+</div>
+
 <script>
+    // Contador de visitas
+    var count = 0;
+
     // Simulación de la carga de la página
     var progressBar = document.getElementById("progressBar");
     var loginSection = document.getElementById("loginSection");
@@ -177,9 +204,10 @@
         document.getElementById("loginForm").reset();
     }
 
-    function openFullscreen() {
-        // Función para acceso limitado (puedes implementarla si es necesario)
-        alert("Acceso limitado activado");
+    function openPremium() {
+        document.getElementById("premiumSection").style.display = "block";
+        count++;
+        document.getElementById("visitorCount").innerText = `Número de accesos hoy: ${count}`;
     }
 </script>
 
