@@ -205,15 +205,13 @@
             <li>🔹 Visualización interactiva de mapas detallados de Ensenada</li>
             <li>🔹 Acceso exclusivo a mapas de zonas estratégicas</li>
             <li>🔹 Visualización de planos en 3D y herramientas de análisis</li>
-            <li>🔹 Consultas directas con nuestros expertos en cartografía</li>
-            <li>🔹 Mayor velocidad de Carga gracias a nuestros servidores privados</li>
-            
+            <li>🔹 Consultas directas en servidor privado, mayor velocidad de carga</li>
         </ul>
         <button class="premium-btn-large" onclick="window.location.href = 'https://www.example.com/premium';">Adquirir Acceso Ahora</button>
     </div>
 
     <div class="modal-info">
-        <p><strong>Precio: Calculado.</strong> <br> Obtén acceso total a todos nuestros recursos premium. ¡Haz crecer tus proyectos con los mejores planos!</p>
+        <p><strong>Precio: $calculado</strong> <br> Obtén acceso total a todos nuestros recursos premium. ¡Haz crecer tus proyectos con los mejores planos!</p>
     </div>
 </div>
 
@@ -265,6 +263,9 @@
         document.getElementById("premiumSection").style.display = "block";
         count++;
         document.getElementById("visitorCount").innerText = `Número de accesos hoy: ${count}`;
+        
+        // Redirección a la URL cuando se accede a la versión premium
+        window.location.href = "https://www.example.com/premium";  // Cambia esto con la URL que desees
     }
 </script>
 
