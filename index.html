@@ -101,6 +101,32 @@
     .premium-btn:hover {
         background-color: #c9302c;
     }
+    .premium-content {
+        margin-top: 30px;
+    }
+    .premium-content h2 {
+        color: #ffc107;
+    }
+    .premium-content p {
+        color: #f8f9fa;
+    }
+    .premium-btn-large {
+        background-color: #ff5733;
+        padding: 20px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .premium-btn-large:hover {
+        background-color: #c7441d;
+    }
+    .modal-info {
+        color: #f8f9fa;
+        margin-top: 20px;
+    }
     @media screen and (max-width: 600px) {
         input[type="text"], input[type="password"], input[type="number"] {
             width: 90%;
@@ -152,12 +178,27 @@
   </div>
 </div>
 
+<!-- Pantalla Premium -->
 <div class="premium-container" id="premiumSection">
-    <h2>Acceso Premium</h2>
-    <p>¡Obtén acceso exclusivo a planos detallados de Ensenada!</p>
-    <button class="premium-btn" onclick="window.location.href = 'https://www.example.com/premium';">Ver Planos</button>
-    <p>Precio: $6000</p>
-    <div id="visitorCount"></div>
+    <div class="premium-content">
+        <h2>Acceso Exclusivo</h2>
+        <p>¿Quieres tener acceso a planos avanzados en CAD y más?</p>
+        <p>Al adquirir la versión premium, tendrás acceso a:</p>
+        <ul style="list-style: none; padding: 0;">
+            <li>🔹 Planos en formato CAD con visor propio</li>
+            <li>🔹 Visualización interactiva de mapas detallados de Ensenada</li>
+            <li>🔹 Acceso exclusivo a mapas de zonas estratégicas</li>
+            <li>🔹 Visualización de planos en 3D y herramientas de análisis</li>
+            <li>🔹 Consultas directas con nuestros expertos en cartografía</li>
+            <li>🔹Guarda tus propias anotaciones para futuras consultas</li>
+            <li>🔹 Mayor velocidad de carga de planos por estar en un servidor privado</li>
+        </ul>
+        <button class="premium-btn-large" onclick="window.location.href = 'https://www.example.com/premium';">Adquirir Acceso Ahora</button>
+    </div>
+
+    <div class="modal-info">
+        <p><strong>Precio: calculado.</strong> <br> Obtén acceso total a todos nuestros recursos premium. ¡Haz crecer tus proyectos con los mejores planos!se un mejor notificador..!</p>
+    </div>
 </div>
 
 <script>
