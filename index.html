@@ -12,6 +12,7 @@
         text-align: center;
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
     .container {
         display: flex;
@@ -19,11 +20,13 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
     }
     input[type="text"], input[type="password"], input[type="number"] {
         padding: 10px;
         margin: 5px;
-        width: 80%;
+        width: 100%;
         max-width: 300px;
         border-radius: 5px;
         border: none;
@@ -36,6 +39,8 @@
         background-color: #007bff;
         color: white;
         cursor: pointer;
+        width: 100%;
+        max-width: 300px;
     }
     input[type="submit"]:hover, button:hover {
         background-color: #0056b3;
@@ -62,7 +67,7 @@
         background-color: #333;
         padding: 20px;
         border-radius: 10px;
-        width: 80%;
+        width: 90%;
         max-width: 500px;
     }
     .options-container {
@@ -94,7 +99,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 9999;
-        width: 80%;
+        width: 90%;
         max-width: 500px;
     }
     .premium-btn {
@@ -151,16 +156,26 @@
         background-color: #f57c00;
     }
     @media screen and (max-width: 600px) {
-        input[type="text"], input[type="password"], input[type="number"] {
-            width: 90%;
+        .container {
+            padding: 10px;
+        }
+
+        input[type="text"], input[type="password"], input[type="number"], input[type="submit"], button {
+            width: 100%;
             max-width: 90%;
         }
-        input[type="submit"], button {
-            width: 90%;
-            max-width: 90%;
+
+        .modal-content, .premium-container {
+            width: 100%;
         }
-        .modal-content {
-            width: 90%;
+
+        .premium-content {
+            margin-top: 20px;
+        }
+
+        .premium-btn-small {
+            font-size: 16px;
+            padding: 12px;
         }
     }
 </style>
@@ -186,14 +201,8 @@
 <div id="myModal" class="modal">
   <div class="modal-content">
     <p>Tu dirección IP está conectada a nuestro servidor. El Token Expira en 5 DIAS.<br>Hora de acceso: <span id="accessTime"></span></p>
+       <p>Te encuentras utilizando la Version Basica.<span id="accessTime"></span></p>
     <div class="options-container">
-        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/4i9Pgu3';">TERRITORIO SUR</button>
-        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/44fBYsA';">AZTECA</button>
-        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/4jJLkBB';">IGNACIO ALTAMIRANO</button>
-        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3XRXgIP';">ZONA FEDERAL</button>
-        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3YfjnJB';">ALTA TIERRA</button>
-        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3E94x0j';">LAS PALMAS 3RA SECC</button>
-        <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3EexOqg';">LAS PALMAS 2DA SECC</button>
         <button class="option-btn" onclick="window.location.href = 'https://autode.sk/3FWJSgj';">Zona Centro SP</button>
     </div>
     </div>
@@ -209,7 +218,7 @@
         <p>Al adquirir la versión premium, tendrás acceso a:</p>
         <ul style="list-style: none; padding: 0;">
             <li>🔹 Planos en formato CAD con visor propio</li>
-            <li>🔹 Visualización interactiva de mapas detallados de Ensenada</li>
+            <li>🔹 Visualización interactiva de mapas detallados</li>
             <li>🔹 Acceso exclusivo a mapas de zonas estratégicas</li>
             <li>🔹 Visualización de planos en 3D y herramientas de análisis</li>
             <li>🔹 Consultas directas en servidor privado, mayor velocidad de carga</li>
@@ -218,7 +227,7 @@
     </div>
 
     <div class="modal-info">
-        <p><strong>Para mantener este servicio funcionando, te invitamos a realizar un apoyo al proyecto. Con tu contribución, tendrás acceso a contenido exclusivo.</strong> <br> Obtén acceso total a todos nuestros recursos. ¡se un Notificador PRO!</p>
+        <p><strong>Para mantener este servicio funcionando, te invitamos a realizar un apoyo al proyecto. Con la nueva version, tendrás acceso a contenido exclusivo.</strong> <br> Obtén acceso total a todos nuestros recursos. ¡se un Notificador PRO!</p>
     </div>
 </div>
 
@@ -278,4 +287,3 @@
 
 </body>
 </html>
-
