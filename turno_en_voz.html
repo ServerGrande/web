@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnos en Voz</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 30px;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        #turno {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 30px 0;
+            color: #0078D7;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 15px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .control-btn { background-color: #0078D7; color: white; }
+        .control-btn:hover { background-color: #005ea3; }
+        .speed-btn { background-color: #aaa; color: white; }
+        .speed-btn.active { background-color: #0078D7; }
+    </style>
+</head>
+<body>
+    <h1>Control de Turnos</h1>
+    <div id="turno">0</div>
+    <div>
+        <button class="btn control-btn" onclick="cambiarTurno(-1)">Anterior</button>
+        <button class="btn control-btn" onclick="cambiarTurno(1)">Siguiente</button>
+    </div>
+    <div>
+        <button class="btn control-btn" onclick="llamarTurno()">Llamar</button>
+        <button class="btn control-btn" onclick="repetirTurno()">Repetir</button>
+    </div>
+    <div>
+        <button id="vel1" class="btn speed-btn active" onclick="setVelocidad(1)">Velocidad x1</button>
+        <button id="vel3" class="btn speed-btn" onclick="setVelocidad(3)">Velocidad x3</button>
+    </div>
+
+    <script>
+        let turnoActual = localStorage.getItem("turnoActual") || 0;
+        let velocidad = 1;
+        let repetirIntervalo = null;
+
+        function mostrarTurno() {
+            document.getElementById("turno").innerText = turnoActual;
+        }
+
+        function cambiarTurno(delta) {
+            if (repetirIntervalo) clearInterval(repetirIntervalo);
+            repetirIntervalo = setInterval(() => {
+                turnoActual = Math.max(0, Math.min(1000, parseInt(turnoActual) + delta));
+                mostrarTurno();
+                localStorage.setItem("turnoActual", turnoActual);
+            }, 200 / velocidad);
+
+            setTimeout(() => clearInterval(repetirIntervalo), 1000);
+        }
+
+        function setVelocidad(val) {
+            velocidad = val;
+            document.getElementById("vel1").classList.remove("active");
+            document.getElementById("vel3").classList.remove("active");
+            document.getElementById("vel" + val).classList.add("active");
+        }
+
+        function llamarTurno() {
+            let msg = new SpeechSynthesisUtterance("Turno " + numeroATexto(turnoActual) + ", pasar a la fila.");
+            msg.lang = "es-MX";
+            speechSynthesis.speak(msg);
+        }
+
+        function repetirTurno() {
+            llamarTurno();
+        }
+
+        function numeroATexto(n) {
+            return new Intl.NumberFormat('es-MX', { maximumFractionDigits: 0 }).format(n);
+        }
+
+        mostrarTurno();
+    </script>
+</body>
+</html>
